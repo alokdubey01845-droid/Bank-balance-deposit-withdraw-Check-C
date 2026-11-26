@@ -1,0 +1,29 @@
+
+#include <stdio.h>
+int main() {
+    char name[50];
+    int age, seats, available = 50;
+    float fare = 500, total;
+
+    printf("RAILWAY TICKET BOOKING SYSTEM\n");
+    printf("Enter Passenger Name: ");
+    scanf("%49s", name);
+    printf("Enter Age: ");
+    scanf("%d", &age);
+    printf("Enter Number of Seats: ");
+    scanf("%d", &seats);
+
+    if (seats > 0 && seats <= available) {
+        total = seats * fare;
+        available = available - seats;
+        printf("\nBooking Successful!\n");
+        printf("Passenger: %s\n", name);
+        printf("Age: %d\n", age);
+        printf("Seats: %d\n", seats);
+        printf("Total Fare: Rs. %.2f\n", total);
+        printf("Seats Remaining: %d\n", available);
+    } else {
+        printf("Invalid seats or seats not available!\n");
+    }
+    return 0;
+}
